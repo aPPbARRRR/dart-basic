@@ -4,8 +4,8 @@ class Cleric {
   final String name;
   int curHp;
   int curMp;
-  final int maxHp = 50;
-  final int maxMp = 10;
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
   Cleric({
     required this.name,
