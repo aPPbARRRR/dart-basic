@@ -47,5 +47,6 @@ void countGame() {
   print('player2 clab 수 : ${p2Count}');
   print('player3 clab 수 : ${p3Count}');
   print('player4 clab 수 : ${p4Count}');
-  print('가장 많은 clap player : $bestPlayer!');
+  print('가장 많은 clap player : $bestPlayer');
 }
+
