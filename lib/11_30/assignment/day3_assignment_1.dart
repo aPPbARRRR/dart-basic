@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:math';
+
 class Cleric {
 
     Cleric({
@@ -19,15 +21,26 @@ class Cleric {
     curHp = maxHp;
   }
 
+  int pray (int seconds) {
+    if(seconds == 0) return 0;
+    int randomNum = Random().nextInt(3);
+    int amountOfRecovory = seconds+randomNum;
+    amountOfRecovory + curMp > maxMp? curMp = maxMp : curMp += amountOfRecovory;
+    return amountOfRecovory;
+  }
+
   @override
   String toString() => 'name: ${this.name}, hp: ${this.curHp}, mp: ${this.curMp}';
 
 }
 
 void main() {
-  Cleric cleric = Cleric(name: 'adf', curHp: 10, curMp: 20);
+  Cleric cleric = Cleric(name: 'adf', curHp: 10, curMp: 3);
   print(cleric.toString());
 
   cleric.selfAid();
+  print(cleric.toString());
+
+  cleric.pray(1);
   print(cleric.toString());
 }
