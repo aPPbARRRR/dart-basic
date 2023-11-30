@@ -1,3 +1,8 @@
+
+void main () {
+  m6(145);
+}
+
 // M1. 더 큰수 판별하기
 // 기능:
 // A, B 두 정수 중 더 큰 수를 출력
@@ -109,8 +114,7 @@ void m5 (List<int> cadrList) {
 
 void m6 (int number) {
 for(int i = 0; i < number.toString().length-1; i++) {
-  if (number.toString()[i]!= number.toString()[i+1]) print('No');
-  }
+  if (number.toString()[i]!= number.toString()[i+1]) print('No');}
 }
 
 // M7. 태풍의 간격

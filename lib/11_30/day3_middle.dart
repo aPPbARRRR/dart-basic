@@ -1,8 +1,11 @@
 
 import 'dart:io';
-
-// 순한맛 1 조용한 곳 찾기
 void main() {
+  middle2();
+}
+
+// 중간맛 1 조용한 곳 찾기
+void middle1() {
   List<Site> restSiteList = [];
 
   print('공사현장 x좌표, y좌표, 소음크기를 띄어쓰기로 구분하여 순서대로 입력하세요.');
@@ -53,4 +56,42 @@ void findQuitePlace(
         ? print('noisy')
         : print('slient');
   }
+}
+
+// 중간맛2 카드 찾기
+void middle2 () {
+  // 4개의 숫자 입력받기
+  print('1-9 사이의 숫자 4개를 띄어쓰기로 구분하여 입력하시오');
+  String? stringCards = stdin.readLineSync()!;
+  int a = int.parse(stringCards.split(' ')[0]);
+  int b = int.parse(stringCards.split(' ')[1]);
+  int c = int.parse(stringCards.split(' ')[2]);
+  int d = int.parse(stringCards.split(' ')[3]);
+  List cardList = [a, b, c, d];
+  // print(cadrList);
+
+  // 4개 숫자를 조합하기
+List wholeCaseList = [];
+for(int i = 0; i < 4; i++) {
+  List tempList = [];
+  tempList.add(cardList[i]);
+  cardList.remove(cardList[i]);
+  // print(tempList);
+  if(i == 3)print('-----------------------');
+  for(int j = 0; j < 3; j++) {
+    tempList.add(cardList[j]);
+    cardList.remove(cardList[j]);
+    // print(tempList);
+    if(j == 2)print('-----------------------');
+
+    for(int k = 0; k < 2; k++) {
+      tempList.addAll(cardList);
+      cardList = [a, b, c, d];
+      wholeCaseList.add(tempList);
+    }
+  }
+}
+print(wholeCaseList);
+
+
 }
