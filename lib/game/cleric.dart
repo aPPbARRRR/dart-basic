@@ -8,11 +8,9 @@ class Cleric {
     this.curMp = maxMp,
   });
 
+  static const int maxHp = 50, maxMp = 10;
   final String name;
-  int curHp;
-  int curMp;
-  static const int maxHp = 50;
-  static const int maxMp = 10;
+  int curHp, curMp;
 
   void selfAid() {
     if (curMp < 5) return;
