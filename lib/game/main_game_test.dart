@@ -22,7 +22,10 @@ void main() {
         name: 'asdgf', hp: 10, mp: 5, wand: Wand(name: 'wand', power: 100));
     print(wizard1.info);
     try {
-      wizard1.mp = -3;
+      wizard1.mp = 5;
+      wizard1.hp = -5;
+      // wizard1.wand = Wand(name: '111', power: 10);
+      wizard1.wand = null;
     } catch (e) {
       print(e);
     }
@@ -31,6 +34,4 @@ void main() {
     print(e);
   }
 
-  //  Map list = {'1' : 1, '2' : 2, '3' : 3};
-  // print(list.keys.toList());
 }
