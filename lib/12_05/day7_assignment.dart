@@ -18,10 +18,9 @@ class Slime {
 }
 
 class PoisonSlime extends Slime {
-  final String suffix;
   int _attackRemainNum = 5;
 
-  PoisonSlime({required this.suffix}) : super(suffix);
+  PoisonSlime(super.suffix);
 
   @override
   void attack(Hero hero) {
@@ -41,7 +40,7 @@ class PoisonSlime extends Slime {
 }
 
 void main() {
-  PoisonSlime ps = PoisonSlime(suffix: '(독)');
+  PoisonSlime ps = PoisonSlime('(독)');
   Hero hero = Hero(name: 'hero', hp: 55);
   ps.attack(hero);
   ps.attack(hero);
