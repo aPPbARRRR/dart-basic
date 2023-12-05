@@ -9,6 +9,8 @@
 // 다음 5. 의 경우 에러처리 대신 다음 기능을 수행한다.
 // 5. HP가 음수가 되는 상황에서는 대신 Hp를 0으로 설정한다.
 
+import 'package:dart_application_1/12_05/day7_assignment.dart';
+
 import 'wand.dart';
 
 class Wizard {
