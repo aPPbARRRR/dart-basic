@@ -1,7 +1,7 @@
 // class 로 선언하라고 명시되어있지 않은 부분은 추상클래스, 인터페이스로 하였음
 // 모든 유닛, 빌딩은 unit, building을 implements 할 것임
 
-class Tribe {}
+abstract class Tribe {}
 
 class Groups {
   List<Group> groups = <Group>[];

@@ -5,7 +5,7 @@
 
 
 
-class Tribe {
+abstract Tribe {
 }
 
 class Groups {
@@ -37,9 +37,9 @@ abstract class Zerg extends Tribe implements Bionic {
   void recovery() {} 
 }
 
-abstract class Bionic {} 
+interface Bionic {} 
 
-abstract class Mechanic {} 
+interface Mechanic {} 
 
 class SCV extends Terran implements Mechanic {
   void getResource(Resource resource) {}
@@ -50,9 +50,9 @@ class Tank extends Terran implements Mechanic {}
 
 class Vulutre extends Terran implements Mechanic {}
 
-abstract class Unit {}
+interface Unit {}
 
-abstract class Building {}
+interface Building {}
 
 class Marine extends Terran implements Bionic {}
 
