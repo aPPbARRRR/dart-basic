@@ -9,10 +9,9 @@ abstract Tribe {
 }
 
 class Groups {
-  List<Group> groups = <Group>[];
-  void addUnitToGroup({required Unit unit, required Group group}) {
-    if (group.units.length >= 12) return;
-  }
+  static List<Group> groups = <Group>[];
+  static void addUnitToGroup({required Unit unit}) {}
+}
 
 
 class Group {
