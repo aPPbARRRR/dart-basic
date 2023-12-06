@@ -12,3 +12,4 @@ class Patent extends IntangibleAsset {
 class TradeMark extends IntangibleAsset {
   // 마찬가지로 무형자산을 extends하여 무형자산의 하위개념으로 선언할 수 있다.
 }
+

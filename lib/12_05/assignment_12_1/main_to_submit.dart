@@ -1,3 +1,6 @@
+import 'package:dart_application_1/12_05/assignment_12_1/book.dart';
+
+import 'asset.dart';
 import 'computer.dart';
 
 void main () {
@@ -6,3 +9,5 @@ void main () {
   com.weight = 20.1;
   print(com.weight);
 }
+
+
