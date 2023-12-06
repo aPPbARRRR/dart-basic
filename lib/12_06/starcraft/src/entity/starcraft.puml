@@ -8,9 +8,17 @@
 class Tribe {
 }
 
+class Groups {
+  List<Group> groups = <Group>[];
+  void addUnitToGroup({required Unit unit, required Group group}) {
+    if (group.units.length >= 12) return;
+  }
+
+
 class Group {
   List<Unit> units = <Unit>[];
 }
+
 
 abstract class Terran extends Tribe {}
 
@@ -60,6 +68,14 @@ class Zealot extends Protoss implements Unit, Bionic {
 class Dragun extends Protoss implements Unit, Mechanic {
   Dragun({required super.sheild});
 }
+
+class exampleZergUnit extends Zerg implements Unit {}
+class exampleZergBuilding extends Zerg implements Building {}
+
+class exampleTerranBuilding extends Terran implements Building {}
+class exampleProtossBuilding extends Protoss implements Building {}
+
+
 
 abstract class Resource {}
 

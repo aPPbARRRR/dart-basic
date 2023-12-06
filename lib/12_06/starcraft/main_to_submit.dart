@@ -1,18 +1,18 @@
 // class 로 선언하라고 명시되어있지 않은 부분은 추상클래스, 인터페이스로 하였음
 // 모든 유닛, 빌딩은 unit, building을 implements 할 것임
 
-class Tribe {
-  // 부대지정 요구사항 분석
-  // 각 종족마다 부대지정 가능. 1플레이어 1종족이라고 하셨던 걸로 기억함..
+class Tribe {}
 
-  //  List<Group> groups = <Group>[];
-
-  //   void addGroupToList (Group group) { groups.add(group); }
-  //   void makeGroup () {}
-  //   void addUnitToGroup (Unit unit, Group group) {}
+class Groups {
+  List<Group> groups = <Group>[];
+  void addUnitToGroup({required Unit unit, required Group group}) {
+    if (group.units.length >= 12) return;
+    // 여기에 12 미만일 때 작동할 코드 작성
+  }
 }
 
 class Group {
+  // subclass 행동 강제
   List<Unit> units = <Unit>[];
 }
 
@@ -63,25 +63,15 @@ class Medic extends Terran implements Bionic, Unit {
   }
 
   void healForSCV(SCV scv) {} // SCV 전용 치료 기능
-
-  // 13-4 문제. 바이오닉을 인자로 받으면 scv도 치료가 가능해야 하는데, 이렇게 하면 scv는 치료를 못함
-  // 방안 1. scv를 bionic 상속하여 만든다.
-  // 방안 2. heal 함수 내부에서 인자를 분류하여 치료 여부를 결정한다(함수 인자는 Bionic이 아닌 모든 인자를 받음).
-  // 방안 3. scv 전용 heal 함수를 만든다.
-
-  // 13-5 문제. bionic중 건물은 치료할 수 없다. 를 어떻게 적용할 것인가?
-  // 방안 1. 13-4의 방안 2. 처럼 함수 내부에서 판별로직을 부여함.
-  // 방안 2. 13-4의 방안 3. 처럼 저그 전용 heal 함수를 만든다.
-  // 방안 3. 치료받을 수 있는 객체를 유닛으로 한정시킨다. -> 객체를 Unit으로 한정시킨다.
 }
 
 class Zealot extends Protoss implements Unit, Bionic {
   Zealot({required super.sheild});
 }
+
 class Dragun extends Protoss implements Unit, Mechanic {
   Dragun({required super.sheild});
 }
-
 
 abstract class Resource {}
 
