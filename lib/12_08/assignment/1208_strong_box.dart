@@ -12,7 +12,7 @@ class StrongBox<T> {
   //test
   get count => _count;
 
-  T? get() {
+  T? get() { // count++ 은 공통으로 올리면 됨.
     T? result = null;
     switch (keyType) {
       case KeyType.padlock:

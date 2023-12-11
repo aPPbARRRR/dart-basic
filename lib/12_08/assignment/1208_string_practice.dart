@@ -6,9 +6,9 @@ class Word {
       : throw Exception('범위를 벗어난 입력입니다.');
 
 // 자음이면 bool값을 반환하시오.
-  bool isConsonant(int i){
+  bool isConsonant(int i) {
     String consonants = 'bcdfghjklmnpqrstvwxyz';
-    consonants = consonants+consonants.toUpperCase();
+    consonants = consonants + consonants.toUpperCase();
     return consonants.contains(sord[i]);
   }
 }
@@ -20,4 +20,3 @@ void main() {
   print(word.isVowel(5)); // A - true
   print(word.isConsonant(5)); // A - false
 }
-
