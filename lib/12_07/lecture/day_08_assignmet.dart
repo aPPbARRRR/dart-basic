@@ -1,5 +1,7 @@
 import 'dart:collection';
 
+import 'package:intl/intl.dart';
+
 class Book implements Comparable {
   Book({required this.title, required this.comment, required this.publishDate});
 
@@ -12,7 +14,11 @@ class Book implements Comparable {
     return identical(this, other) ||
         other is Book &&
             this.title == other.title &&
-            this.publishDate == other.publishDate;
+            // DateFormat.yMMMMd().format(this.publishDate) == DateFormat.yMMMMd().format(this.publishDate); // intl 사용
+            // 이하 intl 사용하지 않고 날짜 비교
+            this.publishDate.year == other.publishDate.year &&
+            this.publishDate.month == other.publishDate.month &&
+            this.publishDate.day == other.publishDate.day;
   }
 
   @override
@@ -38,13 +44,7 @@ class Book implements Comparable {
         comment: comment ?? this.comment,
         publishDate: publishDate ?? this.publishDate);
   }
-
-  
 }
-
-
-
-
 
 // 이하 테스트용 ---------//---------//---------//---------//---------//---------//---------//---------//---------
 void main() {
@@ -64,7 +64,7 @@ void main() {
 
   //세트 내 동등성 판단
   print('세트 길이(1이면 모두 동일한 것으로 판단된 것임): ${books.toSet().length}');
- 
+
   List booksToSort = List.generate(5, (index) => index)
       .map((e) => Book(
           title: 'title',
@@ -83,7 +83,6 @@ void main() {
   print(originalBook);
   Book copyBook = originalBook.copyWith(title: 'copy');
   print(copyBook);
-
 
   Set ts = {};
   print(ts is LinkedHashSet);
