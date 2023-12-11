@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 class Book implements Comparable {
   Book({required this.title, required this.comment, required this.publishDate});
 
@@ -18,7 +20,13 @@ class Book implements Comparable {
       'Book(title: ${title}, publishDate: ${publishDate}, comment: ${comment})';
 
   @override
-  int get hashCode => 1; // 일단 동일한 해시 반환하도록 해놨음... 어떤 방법이 있을지 고민해봐야할듯 ..
+  // int get hashCode => 1; // 일단 동일한 해시 반환하도록 해놨음... 어떤 방법이 있을지 고민해봐야할듯 ..
+  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  // 위와 같이 선언한 이유
+  // 특정 문자열인 타이틀, 특정 데이트타임인 퍼블리쉬데이트는 각각 값에 따라 특정 해쉬코드를 가진다.
+  // 그래서 만약 이 두 개가 같다면 같은 해쉬코드를 반환한다(get을 통해 구현).
+  // 이렇게 하면 타이틀과 퍼블리쉬데이트가 특정값으로 같은 Book 인스턴스라면, 같은 해쉬코드를 반환할 수 있는 것.
+  // 결국 위에서 ^가 아니더라도, 조건(특정 타이틀과 퍼블리쉬데이트가 같으면)을 만족할 때 같은 해쉬코드만 반환할 수 있으면 되는 것.
 
   @override
   int compareTo(other) => other.publishDate
@@ -30,6 +38,8 @@ class Book implements Comparable {
         comment: comment ?? this.comment,
         publishDate: publishDate ?? this.publishDate);
   }
+
+  
 }
 
 
@@ -54,7 +64,7 @@ void main() {
 
   //세트 내 동등성 판단
   print('세트 길이(1이면 모두 동일한 것으로 판단된 것임): ${books.toSet().length}');
-
+ 
   List booksToSort = List.generate(5, (index) => index)
       .map((e) => Book(
           title: 'title',
@@ -73,6 +83,10 @@ void main() {
   print(originalBook);
   Book copyBook = originalBook.copyWith(title: 'copy');
   print(copyBook);
+
+
+  Set ts = {};
+  print(ts is LinkedHashSet);
 }
 
 // set는 동일성 판단할 때 ==, hashCode 두 요소를 사용한다. 각각 true, 그리고 hashcode도 같아야 그래야 동일하다고 판단한다. 그런데 hash코드를 비교하는 부분이 어디에 있는지 모르겠다...

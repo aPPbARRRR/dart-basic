@@ -45,15 +45,15 @@ class SCV extends Terran implements Mechanic {
   void repair(Mechanic target) {} 
 }
 
-class Tank extends Terran implements Mechanic {}
+class Tank extends Terran implements Mechanic, unit {}
 
-class Vulutre extends Terran implements Mechanic {}
+class Vulutre extends Terran implements Mechanic, unit {}
 
 interface Unit {}
 
 interface Building {}
 
-class Marine extends Terran implements Bionic {}
+class Marine extends Terran implements Bionic, unit {}
 
 class Medic extends Terran implements Bionic, Unit {
     '  if (bionic is Building) return;
