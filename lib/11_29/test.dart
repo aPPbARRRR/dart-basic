@@ -26,10 +26,8 @@ bool isValidBraces(String s) {
 abstract interface class TestAbstractClass {
   // String testAbstractFunc();
   int testConcreteFunction() => 1;
-
 }
 
-
 // class testClass implements TestAbstractClass {
-  
+
 // }

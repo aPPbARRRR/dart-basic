@@ -3,7 +3,7 @@ class Hero {
   String name;
 }
 
-void main () {
+void main() {
   Hero hero = Hero(name: 'test');
 
   print(hero.hashCode);
@@ -13,6 +13,4 @@ void main () {
   print('a');
   print('a');
   print('b');
-
-  
 }

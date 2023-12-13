@@ -110,39 +110,39 @@ void main() {
 ///
 /// isIdentical = identical(pair, (2, "a")); // false, not identical values.
 /// isIdentical = identical(pair, (1, "a", more: true)); // false, wrong shape.
-/// 
+///
 
- /// Create an insertion-ordered hash set using the provided
-  /// [equals] and [hashCode].
-  ///
-  /// The provided [equals] must define a stable equivalence relation, and
-  /// [hashCode] must be consistent with [equals].
-  ///
-  /// If you supply one of [equals] and [hashCode],
-  /// you should generally also supply the other.
-  ///
-  /// Some [equals] or [hashCode] functions might not work for all objects.
-  /// If [isValidKey] is supplied, it's used to check a potential element
-  /// which is not necessarily an instance of [E], like the argument to
-  /// [contains] which is typed as `Object?`.
-  /// If [isValidKey] returns `false`, for an object, the [equals] and
-  /// [hashCode] functions are not called, and no key equal to that object
-  /// is assumed to be in the map.
-  /// The [isValidKey] function defaults to just testing if the object is an
-  /// instance of [E], which means that:
-  /// ```dart template:expression
-  /// LinkedHashSet<int>(equals: (int e1, int e2) => (e1 - e2) % 5 == 0,
-  ///                    hashCode: (int e) => e % 5);
-  /// ```
-  /// does not need an `isValidKey` argument, because it defaults to only
-  /// accepting `int` values which are accepted by both `equals` and `hashCode`.
-  ///
-  /// If neither `equals`, `hashCode`, nor `isValidKey` are provided,
-  /// the default `isValidKey` instead accepts all values.
-  /// The default equality and hashcode operations are assumed to work on all
-  /// objects.
-  ///
-  /// Likewise, if `equals` is [identical], `hashCode` is [identityHashCode]
-  /// and `isValidKey` is omitted, the resulting set is identity based,
-  /// and the `isValidKey` defaults to accepting all keys.
-  /// Such a map can be created directly using [LinkedHashSet.identity].
+/// Create an insertion-ordered hash set using the provided
+/// [equals] and [hashCode].
+///
+/// The provided [equals] must define a stable equivalence relation, and
+/// [hashCode] must be consistent with [equals].
+///
+/// If you supply one of [equals] and [hashCode],
+/// you should generally also supply the other.
+///
+/// Some [equals] or [hashCode] functions might not work for all objects.
+/// If [isValidKey] is supplied, it's used to check a potential element
+/// which is not necessarily an instance of [E], like the argument to
+/// [contains] which is typed as `Object?`.
+/// If [isValidKey] returns `false`, for an object, the [equals] and
+/// [hashCode] functions are not called, and no key equal to that object
+/// is assumed to be in the map.
+/// The [isValidKey] function defaults to just testing if the object is an
+/// instance of [E], which means that:
+/// ```dart template:expression
+/// LinkedHashSet<int>(equals: (int e1, int e2) => (e1 - e2) % 5 == 0,
+///                    hashCode: (int e) => e % 5);
+/// ```
+/// does not need an `isValidKey` argument, because it defaults to only
+/// accepting `int` values which are accepted by both `equals` and `hashCode`.
+///
+/// If neither `equals`, `hashCode`, nor `isValidKey` are provided,
+/// the default `isValidKey` instead accepts all values.
+/// The default equality and hashcode operations are assumed to work on all
+/// objects.
+///
+/// Likewise, if `equals` is [identical], `hashCode` is [identityHashCode]
+/// and `isValidKey` is omitted, the resulting set is identity based,
+/// and the `isValidKey` defaults to accepting all keys.
+/// Such a map can be created directly using [LinkedHashSet.identity].

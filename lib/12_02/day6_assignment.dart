@@ -11,14 +11,13 @@ class Person {
   });
 }
 
-void main () {
-
+void main() {
   // 연습문제 2-2
   List<String> nameList = ['홍길동', '한석봉'];
   List<Person> personList = nameList.map((e) => Person(name: e)).toList();
   personList.forEach((e) => print(e.name));
 
   // 연습문제 2-3
-  Map<String, int> personMap = {'홍길동' : 20, '한석봉' : 25};
+  Map<String, int> personMap = {'홍길동': 20, '한석봉': 25};
   personMap.forEach((e, int i) => print('$e의 나이는 $i살입니다.'));
 }

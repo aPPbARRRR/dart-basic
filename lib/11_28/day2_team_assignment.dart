@@ -1,4 +1,3 @@
-
 // 플레이어 4명
 // 30배수 -> ahh
 // 3배수 -> clap
@@ -19,27 +18,36 @@ void countGame() {
   String? bestPlayer;
   for (int i = 1; i <= 100; i++) {
     String result;
-    if (i % 30 == 0) { result = 'ahh'; ahhCount++; }
-    else if (i % 10 == 0) { result = 'rool'; roolCount++; }
-    else if (i % 3 == 0) {
+    if (i % 30 == 0) {
+      result = 'ahh';
+      ahhCount++;
+    } else if (i % 10 == 0) {
+      result = 'rool';
+      roolCount++;
+    } else if (i % 3 == 0) {
       result = 'clap';
       clapCount++;
       switch (i % 4) {
-        case 1: p1Count++;
-        case 2: p2Count++;
-        case 3: p3Count++;
-        case 0: p4Count++;
+        case 1:
+          p1Count++;
+        case 2:
+          p2Count++;
+        case 3:
+          p3Count++;
+        case 0:
+          p4Count++;
       }
-    } else result = i.toString();
+    } else
+      result = i.toString();
     print('player${i % 4} : ${result.toString()}');
   }
 
-  List sortList = [p1Count, p2Count,p3Count, p4Count]..sort();
+  List sortList = [p1Count, p2Count, p3Count, p4Count]..sort();
   if (sortList[3] == p1Count) bestPlayer = 'player1';
   if (sortList[3] == p2Count) bestPlayer = 'player2';
   if (sortList[3] == p3Count) bestPlayer = 'player3';
   if (sortList[3] == p4Count) bestPlayer = 'player4';
-  
+
   print('clap 총 갯수 : ${clapCount}');
   print('rool 총 갯수 : ${roolCount}');
   print('ahh 총 갯수 : ${ahhCount}');
@@ -49,4 +57,3 @@ void countGame() {
   print('player4 clab 수 : ${p4Count}');
   print('가장 많은 clap player : $bestPlayer');
 }
-

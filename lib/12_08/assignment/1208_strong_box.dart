@@ -12,7 +12,8 @@ class StrongBox<T> {
   //test
   get count => _count;
 
-  T? get() { // count++ 은 공통으로 올리면 됨.
+  T? get() {
+    // count++ 은 공통으로 올리면 됨.
     T? result = null;
     switch (keyType) {
       case KeyType.padlock:
@@ -32,9 +33,8 @@ void main() {
   StrongBox<String> box = StrongBox(keyType: KeyType.button);
   box.put('ㅁㄴㅇㄹ');
 
-  for (int i =1; i < 10005; i++) {
-    print('${box.count +1}번째 시도');
+  for (int i = 1; i < 10005; i++) {
+    print('${box.count + 1}번째 시도');
     print(box.get());
   }
 }
-

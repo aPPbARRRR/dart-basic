@@ -42,5 +42,4 @@ class Hero {
   }
 }
 
-class Sword {
-}
+class Sword {}

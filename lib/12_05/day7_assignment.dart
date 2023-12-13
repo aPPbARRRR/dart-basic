@@ -48,5 +48,4 @@ void main() {
   ps.attack(hero);
   ps.attack(hero);
   ps.attack(hero);
-
 }

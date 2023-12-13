@@ -6,14 +6,11 @@ class Book extends TangibleAsset {
   int price;
   String color;
   String isbn;
-  
-  Book({
-    required this.name,
-    required this.price,
-    required this.color,
-    required this.isbn,
-    required super.weight
-  });
-  
-  
+
+  Book(
+      {required this.name,
+      required this.price,
+      required this.color,
+      required this.isbn,
+      required super.weight});
 }

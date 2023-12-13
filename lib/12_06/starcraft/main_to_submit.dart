@@ -20,7 +20,6 @@ class Groups {
         Groups.groups.last.units.add(unit);
       }
     }
-    
   }
 }
 
@@ -39,7 +38,7 @@ abstract class Protoss extends Tribe {
   int _sheild;
 
   // shield를 외부에서 접근하여 건드리게되면 setter body부분 통해서 autoShieldRecovery 실행
-  set shield (int value) {
+  set shield(int value) {
     if (value != 0) autoShieldRecovery();
   }
 

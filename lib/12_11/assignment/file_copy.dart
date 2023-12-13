@@ -12,5 +12,6 @@ void copy(String source, String target) {
 }
 
 void main() {
-  copy('lib/12_11/assignment/test.txt', 'lib/12_11/assignment/copy.txt');
+  copy('lib/12_11/assignment/test.txt',
+      'lib/12_11/assignment/copy.txt'); // ./lib/12_11/assignment/copy.txt
 }

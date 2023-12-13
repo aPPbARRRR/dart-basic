@@ -17,7 +17,8 @@ class Wizard {
   final String name;
   int _hp;
   int _mp;
-  Wand? _wand; // Wand가 nullable로 선언된 이유에 대한 의문이 있습니다(Wand가 nullable인데 null일 경우 Exception을 throw한다는 점 등).
+  Wand?
+      _wand; // Wand가 nullable로 선언된 이유에 대한 의문이 있습니다(Wand가 nullable인데 null일 경우 Exception을 throw한다는 점 등).
 
   // mp 변경시 validation 수행하기 위해 세터를 선언합니다. mp에 대한 변경은 세터를 통해서만 이루어지며, 변경시마다 다음 validation을 수행합니다.
   void set mp(int mp) => this._mp =
@@ -26,8 +27,9 @@ class Wizard {
   void set hp(int hp) => hp < 0 ? this._hp = 0 : this._hp = hp;
 
   // wand 교체시 다음과 같은 세터를 통해 밸리데이션을 수행하고, 경우에 따라 예외를 던집니다.
-  void set wand(Wand? wand) => wand != null ? this._wand = wand : throw Exception('wand가 null입니다. 뭐라도 주세요.');
-
+  void set wand(Wand? wand) => wand != null
+      ? this._wand = wand
+      : throw Exception('wand가 null입니다. 뭐라도 주세요.');
 
   Wizard({
     required this.name,

@@ -7,12 +7,10 @@ class Computer extends TangibleAsset {
   String color;
   String makerName;
 
-  Computer({
-    required this.name,
-    required this.price,
-    required this.color,
-    required this.makerName,
-    required super.weight
-  });
+  Computer(
+      {required this.name,
+      required this.price,
+      required this.color,
+      required this.makerName,
+      required super.weight});
 }
-

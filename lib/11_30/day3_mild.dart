@@ -1,5 +1,4 @@
-
-void main () {
+void main() {
   m6(145);
 }
 
@@ -14,10 +13,10 @@ void main () {
 // 20
 // eq
 
-void m1 (int a, int b) {
+void m1(int a, int b) {
   dynamic result;
-  a > b ? result = a : result =b;
-  if( a == b ) result = 'ab';
+  a > b ? result = a : result = b;
+  if (a == b) result = 'ab';
   print(result);
 }
 
@@ -39,7 +38,7 @@ void m1 (int a, int b) {
 // 출력예시:
 // YES
 // NO
-void m2 (int n, int m) => (n+m)%2 != 0 ? print('yes') : print('no');
+void m2(int n, int m) => (n + m) % 2 != 0 ? print('yes') : print('no');
 
 //-----------------------------------------------------------------------------
 
@@ -51,14 +50,13 @@ void m2 (int n, int m) => (n+m)%2 != 0 ? print('yes') : print('no');
 // 출력예시:
 // 모두연 010-1234-5678
 
-
-
-void m3 (List<String> stringList) => print(stringList[0]+' '+stringList.sublist(1).reduce((value, e) => value+'-'+e));
+void m3(List<String> stringList) => print(stringList[0] +
+    ' ' +
+    stringList.sublist(1).reduce((value, e) => value + '-' + e));
 
 // —------------------------------------------------------------------------------------------------
 
 // 1️⃣3️⃣5️⃣7️⃣9️⃣
-
 
 // M4. 등차수열 예제 생성기 만들어 보기
 // 당신은 초등학교 수학선생님입니다. 학생들에게 등차수열에 대한 설명자료를 만들기 위해
@@ -78,8 +76,8 @@ void m3 (List<String> stringList) => print(stringList[0]+' '+stringList.sublist(
 // 출력예시:
 // 5 15 25 35 45 55 65 75 85 95
 
-void m4 (int performNum, int initVal, int tolerance) {
-  for(int i = 1; i <= performNum; i++) print(initVal + tolerance*(i-1));
+void m4(int performNum, int initVal, int tolerance) {
+  for (int i = 1; i <= performNum; i++) print(initVal + tolerance * (i - 1));
 }
 
 // M5. 부족한 카드 찾기
@@ -93,11 +91,10 @@ void m4 (int performNum, int initVal, int tolerance) {
 // 출력예시:
 // 4
 
-
-void m5 (List<int> cadrList) {
- List curList = [1,2,3,4,5];
- curList.removeWhere((e) => cadrList.contains(e));
- print(curList);
+void m5(List<int> cadrList) {
+  List curList = [1, 2, 3, 4, 5];
+  curList.removeWhere((e) => cadrList.contains(e));
+  print(curList);
 }
 // —------------------------------------------------------------------------------------------------
 
@@ -112,9 +109,10 @@ void m5 (List<int> cadrList) {
 // 777
 // No
 
-void m6 (int number) {
-for(int i = 0; i < number.toString().length-1; i++) {
-  if (number.toString()[i]!= number.toString()[i+1]) print('No');}
+void m6(int number) {
+  for (int i = 0; i < number.toString().length - 1; i++) {
+    if (number.toString()[i] != number.toString()[i + 1]) print('No');
+  }
 }
 
 // M7. 태풍의 간격
@@ -130,8 +128,9 @@ for(int i = 0; i < number.toString().length-1; i++) {
 // 6
 // 6
 
-void m7 (List<int> accidentDayList) {
-  for(int i = 0; i < accidentDayList.length-1; i++) print(accidentDayList[i+1]-accidentDayList[i]);
+void m7(List<int> accidentDayList) {
+  for (int i = 0; i < accidentDayList.length - 1; i++)
+    print(accidentDayList[i + 1] - accidentDayList[i]);
 }
 // —------------------------------------------------------------------------------------------------
 
@@ -150,4 +149,6 @@ void m7 (List<int> accidentDayList) {
 // OK
 // 6
 
-void m8 (int number) => number.toString().length >= 11 ? print('OK') : print('${11-number.toString().length}개 더 필요해요');
+void m8(int number) => number.toString().length >= 11
+    ? print('OK')
+    : print('${11 - number.toString().length}개 더 필요해요');

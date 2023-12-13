@@ -1,3 +1,5 @@
+
+
 class Trader {
   String name;
   String city;
@@ -61,4 +63,5 @@ void main() {
       .map((e) => e.value)
       .toList()
       .reduce((value, e) => value < e ? value : e));
+      // .reduce(min)); 요렇게도 가능해요
 }
