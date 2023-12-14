@@ -25,12 +25,4 @@ class StoreService {
     }
     return null;
   }
-
-  Future<void> storesInit({required String uri}) async {
-    try {
-      stores = await repository.fetchStores(uri: uri);
-    } catch (e) {
-      print(e);
-    }
-  }
 }
