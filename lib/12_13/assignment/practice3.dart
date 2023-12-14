@@ -7,7 +7,7 @@ Future<String> timeoutFuture() async {
 
 // .then으로 해결
 void main() async {
-  timeoutFuture().timeout(Duration(seconds: 7), onTimeout: () {
+  timeoutFuture().timeout(Duration(seconds: 5), onTimeout: () {
     print('time out');
     return 'fail';
   }).then((value) => print(value)); // 결과 출력은 요구사항에 없음
